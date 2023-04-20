@@ -26,3 +26,9 @@ treemap.c:41:12: error: unused variable ‘tree’ [-Werror=unused-variable]
 cc1: all warnings being treated as errors
 Compilation failed
 90de45d
+Thu 20 Apr 2023 11:52:51 PM UTC: 
+ treemap.c | 8 +++++---
+ 1 file changed, 5 insertions(+), 3 deletions(-)
+ tests:  4|7
+total_score: 5/70
+5ed663c
