@@ -92,7 +92,6 @@ Pair * searchTreeMap(TreeMap * tree, void* key) {
 
   }
   
-  return pair;
 }
 
 
