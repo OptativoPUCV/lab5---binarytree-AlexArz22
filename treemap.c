@@ -51,9 +51,9 @@ void insertTreeMap(TreeMap * tree, void* key, void * value) {
   par->key=key;
   par->value=value;
   tree->current=tree->root;
-
+  int iguales;
   while(true){
-    int iguales=is_equal(tree, tree->current->pair->key, key);
+    iguales=is_equal(tree, tree->current->pair->key, key);
     if(iguales==1) return;
       
     else{
@@ -66,6 +66,7 @@ void insertTreeMap(TreeMap * tree, void* key, void * value) {
           tree->current->right=nodo;
           nodo->left=NULL;
           nodo->right=NULL;
+          tree->current=tree->current->right;
           return;
         }
         tree->current=tree->current->right;
@@ -78,6 +79,7 @@ void insertTreeMap(TreeMap * tree, void* key, void * value) {
           tree->current->left=nodo;
           nodo->left=NULL;
           nodo->right=NULL;
+          tree->current=tree->current->left;
           return;
         }
         tree->current=tree->current->left;
