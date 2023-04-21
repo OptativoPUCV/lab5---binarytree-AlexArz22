@@ -205,11 +205,16 @@ Pair * nextTreeMap(TreeMap * tree) {
   }
   else{
     while(true){
-      if(tree->current->pair->key < tree->current->parent->pair->key){
-        return tree->current->parent->pair;
+      if(tree->current->parent==NULL){
+        return tree->current->pair;
       }
       else{
-        tree->current=tree->current->parent;
+        if(tree->current->pair->key < tree->current->parent->pair->key){
+          return tree->current->parent->pair;
+        }
+        else{
+          tree->current=tree->current->parent;
+        }
       }
     }
   }  
