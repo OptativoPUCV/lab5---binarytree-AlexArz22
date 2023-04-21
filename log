@@ -292,3 +292,9 @@ treemap.c:201:13: error: unused variable ‘max’ [-Werror=unused-variable]
 cc1: all warnings being treated as errors
 Compilation failed
 1440dc3
+Fri 21 Apr 2023 03:39:44 AM UTC: 
+ treemap.c | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+ tests:  22|2
+total_score: 50/70
+fe955e6
