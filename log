@@ -136,3 +136,9 @@ treemap.c:106:15: error: variable ‘padre’ set but not used [-Werror=unused-b
 cc1: all warnings being treated as errors
 Compilation failed
 d86f1fc
+Fri 21 Apr 2023 12:54:31 AM UTC: 
+ treemap.c | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+ tests:  16|4
+total_score: 30/70
+c9fac37

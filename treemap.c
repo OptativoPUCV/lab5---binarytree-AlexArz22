@@ -105,7 +105,9 @@ void removeNode(TreeMap * tree, TreeNode* node) {
   if(node->left == NULL && node->right == NULL){
     TreeNode *padre=malloc(sizeof(TreeNode));
     padre=node->parent;
-    padre=NULL;
+    if(padre->left==node) padre->left=NULL;
+    if(padre->right==node) padre->right=NULL;
+    free(node);
     return;
   }
 
