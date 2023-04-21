@@ -145,8 +145,11 @@ void removeNode(TreeMap * tree, TreeNode* node) {
   }
 
   //Tiene 2 hijos
+  TreeNode *menor=malloc(sizeof(TreeNode));
+  menor=minimum(node->right);
   if(node->left != NULL && node->right != NULL){
-    
+    node->pair=menor->pair;
+    removeNode(tree, menor);
   }
 }
 
