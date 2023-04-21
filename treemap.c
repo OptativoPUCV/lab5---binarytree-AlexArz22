@@ -198,7 +198,7 @@ Pair * firstTreeMap(TreeMap * tree) {
 
 Pair * nextTreeMap(TreeMap * tree) {
   if(tree==NULL || tree->current==NULL) return NULL;
-  /*TreeNode *max= tree->root;
+  TreeNode *max= tree->root;
   if(max==NULL) return NULL;
   while(true){
     if(max->right!=NULL) max=max->right;
@@ -207,7 +207,7 @@ Pair * nextTreeMap(TreeMap * tree) {
   if(is_equal(tree,max->pair->key,tree->current->pair->key)==1){
     return NULL;
   }
-  */
+  
   if(tree->current->right!=NULL)
   {
     tree->current=minimum(tree->current->right);
@@ -218,7 +218,7 @@ Pair * nextTreeMap(TreeMap * tree) {
     TreeNode *original=tree->current;
 
     while(true){
-      if(tree->current==NULL) return NULL;
+      if(tree->current->parent==NULL) return tree->current->pair;
       comparar=tree->lower_than(original->pair->key, tree->current->parent->pair->key);
       if(comparar==1){
         tree->current=tree->current->parent;
