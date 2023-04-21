@@ -111,24 +111,34 @@ void removeNode(TreeMap * tree, TreeNode* node) {
     return;
   }
 
+  TreeNode *hijo=malloc(sizeof(TreeNode));
+
   //Solo tiene un hijo
   if((node->left == NULL && node->right != NULL) || (node->left != NULL && node->right == NULL)){
 
     if(padre->left==node){
       if(node->left!=NULL){
-        padre->left=node->left;
+        hijo=node->left;
+        padre->left=hijo;
+        hijo->parent=padre;
       }
       else{
-        padre->left=node->right;
+        hijo=node->right;
+        padre->left=hijo;
+        hijo->parent=padre;
       }
     }
 
     if(padre->right==node){
       if(node->left!=NULL){
-        padre->right=node->left;
+        hijo=node->left;
+        padre->right=hijo;
+        hijo->parent=padre;
       }
       else{
-        padre->right=node->right;
+        hijo=node->right;
+        padre->right=hijo;
+        hijo->parent=padre;
       }
     }  
     free(node);
