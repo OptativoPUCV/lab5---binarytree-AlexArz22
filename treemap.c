@@ -102,9 +102,9 @@ TreeNode * minimum(TreeNode * x){
 void removeNode(TreeMap * tree, TreeNode* node) {
 
   //No tiene hijos
+  TreeNode *padre=malloc(sizeof(TreeNode));
+  padre=node->parent;
   if(node->left == NULL && node->right == NULL){
-    TreeNode *padre=malloc(sizeof(TreeNode));
-    padre=node->parent;
     if(padre->left==node) padre->left=NULL;
     if(padre->right==node) padre->right=NULL;
     free(node);
@@ -113,14 +113,25 @@ void removeNode(TreeMap * tree, TreeNode* node) {
 
   //Solo tiene un hijo
   if((node->left == NULL && node->right != NULL) || (node->left != NULL && node->right == NULL)){
-    if(node->left!=NULL){
-      node=node->left;
-      node->left=NULL;
+
+    if(padre->left==node){
+      if(node->left!=NULL){
+        padre->left=node->left;
+      }
+      else{
+        padre->left=node->right;
+      }
     }
-    else{
-      node=node->right;
-      node->right=NULL;
-    }
+
+    if(padre->right==node){
+      if(node->left!=NULL){
+        padre->right=node->left;
+      }
+      else{
+        padre->right=node->right;
+      }
+    }  
+    free(node);
   }
 
   //Tiene 2 hijos
