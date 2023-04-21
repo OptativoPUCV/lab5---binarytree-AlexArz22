@@ -218,7 +218,6 @@ Pair * nextTreeMap(TreeMap * tree) {
     TreeNode *original=tree->current;
 
     while(true){
-      if(tree->current->parent==NULL) return tree->current->pair;
       comparar=tree->lower_than(original, tree->current->parent->pair->key);
       if(comparar==1){
         tree->current=tree->current->parent;
