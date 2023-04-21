@@ -208,8 +208,31 @@ Pair * nextTreeMap(TreeMap * tree) {
     return NULL;
   }
 
-
-  /*
+  if(tree->current->right!=NULL)
+  {
+    tree->current=minimum(tree->current->right);
+    return tree->current->pair;
+  }
+  else{
+    int comparar=tree->lower_than(tree->current->pair->key, tree->current->parent->pair->key);
+    if(comparar==1){
+      tree->current=tree->root;
+      return tree->current->pair;
+    }
+    else{
+      tree->current=tree->current->parent;
+      return tree->current->pair;
+    }
+    /*while(true){
+      if(comparar==1){
+        return tree->root->pair;
+      }
+      else{
+        
+      }
+    }*/
+  }
+/*
   TreeNode *original=tree->current;
   
   if(tree->current->right!=NULL){
