@@ -198,6 +198,7 @@ Pair * firstTreeMap(TreeMap * tree) {
 
 Pair * nextTreeMap(TreeMap * tree) {
   if(tree==NULL || tree->current==NULL) return NULL;
+  if(tree->current->left!=NULL && tree->current->right!=NULL)
   if(tree->current->right!=NULL){
     tree->current=minimum(tree->current->right);
     return tree->current->pair;

@@ -189,3 +189,17 @@ Fri 21 Apr 2023 03:02:36 AM UTC:
  tests:  23|2
 total_score: 50/70
 e922bef
+Fri 21 Apr 2023 03:03:58 AM UTC: 
+ treemap.c | 1 +
+ 1 file changed, 1 insertion(+)
+In file included from test.c:4:
+treemap.c: In function ‘nextTreeMap’:
+treemap.c:201:5: error: suggest explicit braces to avoid ambiguous ‘else’ [-Werror=dangling-else]
+  201 |   if(tree->current->left!=NULL && tree->current->right!=NULL)
+      |     ^
+treemap.c:210:1: error: control reaches end of non-void function [-Werror=return-type]
+  210 | }
+      | ^
+cc1: all warnings being treated as errors
+Compilation failed
+bd604c0
