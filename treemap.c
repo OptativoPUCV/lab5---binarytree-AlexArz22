@@ -204,7 +204,7 @@ Pair * nextTreeMap(TreeMap * tree) {
     if(max->right!=NULL) max=max->right;
     if(max->right==NULL) break;
   }
-  if(max->pair->key==tree->current->pair->key){
+  if(is_equal(tree,max->pair->key,tree->current->pair->key)==1){
     return NULL;
   }
 
