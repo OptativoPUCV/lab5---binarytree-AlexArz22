@@ -226,3 +226,21 @@ Fri 21 Apr 2023 03:10:55 AM UTC:
  tests:  22|2
 total_score: 50/70
 fac531a
+Fri 21 Apr 2023 03:19:01 AM UTC: 
+ treemap.c | 6 ++++++
+ 1 file changed, 6 insertions(+)
+In file included from test.c:4:
+treemap.c: In function ‘nextTreeMap’:
+treemap.c:215:16: error: ‘max’ undeclared (first use in this function)
+  215 |             if(max->right!=NULL) x=x->right;
+      |                ^~~
+treemap.c:215:16: note: each undeclared identifier is reported only once for each function it appears in
+treemap.c:217:17: error: expected expression before ‘)’ token
+  217 |         if(max!=)
+      |                 ^
+treemap.c:217:11: error: suggest explicit braces to avoid ambiguous ‘else’ [-Werror=dangling-else]
+  217 |         if(max!=)
+      |           ^
+cc1: all warnings being treated as errors
+Compilation failed
+f212253

@@ -209,6 +209,12 @@ Pair * nextTreeMap(TreeMap * tree) {
         return tree->current->pair;
       }
       else{
+          TreeNode *x= tree->root;
+          if(x==NULL) return NULL;
+          while(true){
+            if(max->right!=NULL) x=x->right;
+          }
+        if(max!=)
         if(tree->current->pair->key < tree->current->parent->pair->key){
           return tree->current->parent->pair;
         }
