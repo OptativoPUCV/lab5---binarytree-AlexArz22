@@ -216,17 +216,13 @@ Pair * nextTreeMap(TreeMap * tree) {
   }
   else{
     while(true){
-      if(tree->current->parent==NULL){
-        return tree->current->pair;
+      if(original->pair->key < tree->current->parent->pair->key){
+        return tree->current->parent->pair;
       }
       else{
-        if(original->pair->key < tree->current->parent->pair->key){
-          return tree->current->parent->pair;
-        }
-        else{
-          tree->current=tree->current->parent;
-        }
+        tree->current=tree->current->parent;
       }
     }
-  }  
-}
+  }
+}  
+
