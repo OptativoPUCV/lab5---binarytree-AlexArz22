@@ -225,7 +225,6 @@ Pair * nextTreeMap(TreeMap * tree) {
         return tree->current->pair;
       }
       tree->current=tree->current->parent;
-      if(tree->current->parent==NULL && comparar==0) return NULL;
 
     }
     /*if(comparar==1){
