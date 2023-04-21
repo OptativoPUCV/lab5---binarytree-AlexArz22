@@ -44,3 +44,15 @@ Thu 20 Apr 2023 11:53:25 PM UTC:
  tests:  4|7
 total_score: 5/70
 0b56735
+Fri 21 Apr 2023 12:07:45 AM UTC: 
+ treemap.c | 25 ++++++++++++++++++++++---
+ 1 file changed, 22 insertions(+), 3 deletions(-)
+In file included from test.c:4:
+treemap.c: In function ‘searchTreeMap’:
+treemap.c:95:10: error: ‘pair’ undeclared (first use in this function); did you mean ‘Pair’?
+   95 |   return pair;
+      |          ^~~~
+      |          Pair
+treemap.c:95:10: note: each undeclared identifier is reported only once for each function it appears in
+Compilation failed
+68f7c15
