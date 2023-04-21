@@ -244,3 +244,16 @@ treemap.c:217:11: error: suggest explicit braces to avoid ambiguous ‘else’ [
 cc1: all warnings being treated as errors
 Compilation failed
 f212253
+Fri 21 Apr 2023 03:23:19 AM UTC: 
+ treemap.c | 15 +++++++++------
+ 1 file changed, 9 insertions(+), 6 deletions(-)
+In file included from test.c:4:
+treemap.c: In function ‘nextTreeMap’:
+treemap.c:204:40: error: expected ‘;’ before ‘if’
+  204 |     if(max->right!=NULL) max=max->right
+      |                                        ^
+      |                                        ;
+  205 |     if(max->right==NULL) break;
+      |     ~~                                  
+Compilation failed
+59dbc82
