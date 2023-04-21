@@ -207,7 +207,8 @@ Pair * nextTreeMap(TreeMap * tree) {
   if(is_equal(tree,max->pair->key,tree->current->pair->key)==1){
     return NULL;
   }
-
+  if(tree->current->parent==NULL) return tree->current->pair;
+  
   if(tree->current->right!=NULL)
   {
     tree->current=minimum(tree->current->right);
@@ -223,14 +224,6 @@ Pair * nextTreeMap(TreeMap * tree) {
       tree->current=tree->current->parent;
       return tree->current->pair;
     }
-    /*while(true){
-      if(comparar==1){
-        return tree->root->pair;
-      }
-      else{
-        
-      }
-    }*/
   }
 /*
   TreeNode *original=tree->current;
