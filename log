@@ -257,3 +257,9 @@ treemap.c:204:40: error: expected ‘;’ before ‘if’
       |     ~~                                  
 Compilation failed
 59dbc82
+Fri 21 Apr 2023 03:23:22 AM UTC: 
+ treemap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  22|2
+total_score: 50/70
+ac71427

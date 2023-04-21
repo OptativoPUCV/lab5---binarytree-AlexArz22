@@ -201,7 +201,7 @@ Pair * nextTreeMap(TreeMap * tree) {
   TreeNode *max= tree->root;
   if(max==NULL) return NULL;
   while(true){
-    if(max->right!=NULL) max=max->right
+    if(max->right!=NULL) max=max->right;
     if(max->right==NULL) break;
   }
   if(tree->current->right!=NULL){
