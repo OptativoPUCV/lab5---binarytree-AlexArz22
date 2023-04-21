@@ -207,15 +207,26 @@ Pair * nextTreeMap(TreeMap * tree) {
   if(is_equal(tree,max->pair->key,tree->current->pair->key)==1){
     return NULL;
   }
-  if(tree->current->parent==NULL) return tree->current->pair;
   
   if(tree->current->right!=NULL)
   {
     tree->current=minimum(tree->current->right);
     return tree->current->pair;
   }
-  else{
-    int comparar=tree->lower_than(tree->current->pair->key, tree->current->parent->pair->key);
+  /*else{
+    int comparar;
+    TreeNode *original=tree->current;
+
+    while(true){
+      if(tree->current->parent==NULL) return tree->current->pair;
+      comparar=tree->lower_than(original, tree->current->parent->pair->key);
+      if(comparar==1){
+        tree->current=tree->current->parent;
+        return tree->current->pair;
+      }
+      if(tree->current->parent==NULL && comparar==0) return NULL;
+
+    }
     if(comparar==1){
       tree->current=tree->root;
       return tree->current->pair;
@@ -224,6 +235,7 @@ Pair * nextTreeMap(TreeMap * tree) {
       tree->current=tree->current->parent;
       return tree->current->pair;
     }
+    */
   }
 /*
   TreeNode *original=tree->current;
