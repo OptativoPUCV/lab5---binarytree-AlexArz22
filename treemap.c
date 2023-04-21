@@ -103,6 +103,7 @@ void removeNode(TreeMap * tree, TreeNode* node) {
 
   //No tiene hijos
   if(node->left == NULL && node->right == NULL){
+    TreeNode *padre=node->parent;
     node=NULL;
     return;
   }
