@@ -200,14 +200,14 @@ Pair * nextTreeMap(TreeMap * tree) {
   if(tree==NULL || tree->current==NULL) return NULL;
   TreeNode *max= tree->root;
   //if(max==NULL) return NULL;
-  while(true){
+  /*while(true){
     if(max->right!=NULL) max=max->right;
     if(max->right==NULL) break;
   }
   if(max->pair->key==tree->current->pair->key){
     return NULL;
   }
-  
+  */
   TreeNode *original=tree->current;
   
   if(tree->current->right!=NULL){
@@ -224,8 +224,7 @@ Pair * nextTreeMap(TreeMap * tree) {
           return tree->current->parent->pair;
         }
         else{
-          return tree->root->pair;
-          //tree->current=tree->current->parent;
+          tree->current=tree->current->parent;
         }
       }
     }
