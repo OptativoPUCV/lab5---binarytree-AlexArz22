@@ -213,7 +213,7 @@ Pair * nextTreeMap(TreeMap * tree) {
     tree->current=minimum(tree->current->right);
     return tree->current->pair;
   }
-  /*else{
+  else{
     int comparar;
     TreeNode *original=tree->current;
 
@@ -224,10 +224,11 @@ Pair * nextTreeMap(TreeMap * tree) {
         tree->current=tree->current->parent;
         return tree->current->pair;
       }
+      tree->current=tree->current->parent;
       if(tree->current->parent==NULL && comparar==0) return NULL;
 
     }
-    if(comparar==1){
+    /*if(comparar==1){
       tree->current=tree->root;
       return tree->current->pair;
     }
