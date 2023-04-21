@@ -224,7 +224,8 @@ Pair * nextTreeMap(TreeMap * tree) {
           return tree->current->parent->pair;
         }
         else{
-          tree->current=tree->current->parent;
+          return tree->root->pair;
+          //tree->current=tree->current->parent;
         }
       }
     }
