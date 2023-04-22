@@ -198,7 +198,7 @@ Pair * upperBound(TreeMap * tree, void* key) {
       tree->current=tree->current->parent;
     }*/
     //comparar = tree->lower_than(aux->pair->key, nextTreeMap(tree)->key);
-    Pair *par=nextTreeMap(tree);
+    par=nextTreeMap(tree);
     return par;
   }
   else{
