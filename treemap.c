@@ -220,6 +220,10 @@ Pair * upperBound(TreeMap * tree, void* key) {
   Pair *par = searchTreeMap(tree, key);
 
   if(par==NULL){
+    int comparar=tree->lower_than(key, tree->current->pair->key);
+    if(comparar==1){
+      return current->pair;
+    }
     par=nextTreeMap(tree);
     return par;
   }
