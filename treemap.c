@@ -184,24 +184,29 @@ Pair * searchTreeMap(TreeMap * tree, void* key) {
   }
   */
   
+  
   tree->current=tree->root;
+  Treenode *aux=tree->current;
   if(tree->current==NULL){
     return NULL;
   }
-  while(tree->current->right!=NULL || tree->current->left!=NULL){
-    int iguales=is_equal(tree, tree->current->pair->key, key);
+  while(aux!=NULL){
+    int iguales=is_equal(tree, aux->pair->key, key);
     
-    if(iguales==1) return tree->current->pair;
-      
+    if(iguales==1){
+      tree->current=aux;
+      return tree->current->pair;
+    } 
     else{
-      int comparar=tree->lower_than(tree->current->pair->key, key);
+      int comparar=tree->lower_than(aux->pair->key, key);
       if(comparar==1){
-        if(tree->current->right==NULL) return NULL;
-        tree->current=tree->current->right;
+        tree->current=aux;
+        aux=tree->current->right;
       }
       if(comparar==0){
-        if(tree->current->left) return NULL;
-        tree->current=tree->current->left;
+        
+        tree->current=aux;
+        aux=tree->current->left;
       }
     }
   }
