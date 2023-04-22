@@ -190,14 +190,16 @@ Pair * upperBound(TreeMap * tree, void* key) {
   if(par==NULL){
     TreeNode *aux=tree->current;
     int comparar;
-    while(true){
+    /*while(true){
       if(tree->current==NULL) return NULL;
-      comparar = tree->lower_than(aux->pair->key, tree->current->pair->key);
+      comparar = tree->lower_than(aux->pair->key, nextTreeMap(tree)->key);
       if(comparar==0){
         return tree->current->pair;
       }
       tree->current=tree->current->parent;
-    }
+    }*/
+    comparar = tree->lower_than(aux->pair->key, nextTreeMap(tree)->key);
+    return tree->current->pair;
   }
   else{
     return par;
