@@ -165,7 +165,7 @@ void eraseTreeMap(TreeMap * tree, void* key){
 
 Pair * searchTreeMap(TreeMap * tree, void* key) {
 
-  tree->current=tree->root;
+  /*tree->current=tree->root;
   while(true){
     if(tree->current==NULL) return NULL;
     int iguales=is_equal(tree, tree->current->pair->key, key);
@@ -182,34 +182,42 @@ Pair * searchTreeMap(TreeMap * tree, void* key) {
       }
     }
   }
+  */
+  
+  tree->current=tree->root;
+  if(tree->current==NULL){
+    return NULL;
+  }
+  while(tree->current->right!=NULL || tree->current->left!=NULL){
+    int iguales=is_equal(tree, tree->current->pair->key, key);
+    
+    if(iguales==1) return tree->current->pair;
+      
+    else{
+      int comparar=tree->lower_than(tree->current->pair->key, key);
+      if(comparar==1){
+        if(tree->current->right==NULL) return NULL;
+        tree->current=tree->current->right;
+      }
+      if(comparar==0){
+        if(tree->current->left) return NULL;
+        tree->current=tree->current->left;
+      }
+    }
+  }
+  return NULL;
 }
 
 
 Pair * upperBound(TreeMap * tree, void* key) {
   if(tree==NULL || tree->current==NULL) return NULL;
 
-  tree->current=tree->root;
-  while(true){
-    if(tree->current==NULL) return NULL;
-    int iguales=is_equal(tree, tree->current->pair->key, key);
-    
-    if(iguales==1) return tree->current->pair;
-      
-    else{
-      int comparar=tree->lower_than(tree->current->pair->key, key);
-      if(comparar==1){
-        tree->current=tree->current->right;
-      }
-      if(comparar==0){
-        tree->current=tree->current->left;
-      }
-    }
-  }
 
 
 
 
-  /*
+
+  
   Pair *par = searchTreeMap(tree, key);
 
   if(par==NULL){
@@ -220,7 +228,7 @@ Pair * upperBound(TreeMap * tree, void* key) {
   else{
     return par;
   }
-  */
+  
 }
 
 Pair * firstTreeMap(TreeMap * tree) {
