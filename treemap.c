@@ -222,7 +222,7 @@ Pair * upperBound(TreeMap * tree, void* key) {
   if(par==NULL){
     int comparar=tree->lower_than(key, tree->current->pair->key);
     if(comparar==1){
-      return current->pair;
+      return tree->current->pair;
     }
     par=nextTreeMap(tree);
     return par;
