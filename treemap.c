@@ -220,7 +220,6 @@ Pair * upperBound(TreeMap * tree, void* key) {
   Pair *par = searchTreeMap(tree, key);
 
   if(par==NULL){
-    tree->current=tree->current->parent;
     par=nextTreeMap(tree);
     return par;
   }
