@@ -186,7 +186,7 @@ Pair * searchTreeMap(TreeMap * tree, void* key) {
   
   
   tree->current=tree->root;
-  Treenode *aux=tree->current;
+  TreeNode *aux=tree->current;
   if(tree->current==NULL){
     return NULL;
   }

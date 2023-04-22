@@ -517,3 +517,9 @@ treemap.c:209:12: error: assignment to ‘int *’ from incompatible pointer typ
 cc1: all warnings being treated as errors
 Compilation failed
 4c8da53
+Sat 22 Apr 2023 06:40:14 PM UTC: 
+ treemap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  25|1
+total_score: 60/70
+5a491c7
